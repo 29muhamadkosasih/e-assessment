@@ -66,6 +66,10 @@
 
 <!-- Page JS -->
 <script src="{{ asset('assets/js/pages-auth.js') }}"></script>
+<script src="{{ asset('assets/vendor/js/bootstrap.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js')}}"></script>
+<script src="{{ asset('assets/vendor/libs/node-waves/node-waves.js')}}"></script>
+<script src="{{ asset('assets/js/tables-datatables-extensions.js')}}"></script>
 
 <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 

@@ -47,10 +47,11 @@ class SkemaController extends Controller
     {
         $bank   = Skema::find($id);
         $this->validate($request, [
-            'nama_skema' => 'required|max:255|min:5|unique:skema',
+            'nama_skema' => 'required|max:255|min:5',
         ]);
         $bank->update([
-            'nama_skema'   => $request->nama_skema
+            'nama_skema'   => $request->nama_skema,
+            'no'   => $request->no
         ]);
 
         return redirect()->route('skema.index')

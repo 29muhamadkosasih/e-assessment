@@ -9,10 +9,7 @@
         <div class="card-body">
             <div class="row ">
                 <div class="col-auto me-auto ">
-                    <h5 class="mb-0">List Data apl_01</h5>
-                </div>
-                <div class="col-auto">
-                    <a href="{{ route('apl_01.create') }}" class="btn btn-primary">Create</a>
+                    <h5 class="mb-0">List Data APL-01</h5>
                 </div>
             </div>
             <div class="table-responsive text-nowrap">
@@ -44,16 +41,12 @@
                             <td></td>
                             <td></td>
                             <td class="text-center">
-                                <a href="{{ route('apl_01.show', $data->id) }}" class="btn btn-icon btn-info btn-sm">
-                                    <span class="ti ti-download"></span>
-                                </a>
-                                <a href="{{ route('apl_01.show', $data->id) }}" class="btn btn-icon btn-success btn-sm">
+
+                                <a href="{{ route('validasi.show', $data->id) }}"
+                                    class="btn btn-icon btn-success btn-sm">
                                     <span class="ti ti-eye"></span>
                                 </a>
-                                <a href="{{ route('apl_01.edit', $data->id) }}" class="btn btn-icon btn-warning btn-sm">
-                                    <span class="ti ti-edit"></span>
-                                </a>
-                                <form action="{{ route('apl_01.destroy', $data->id) }}" class="d-inline-block"
+                                <form action="{{ route('validasi.destroy', $data->id) }}" class="d-inline-block"
                                     method="post">
                                     @csrf
                                     @method('DELETE')

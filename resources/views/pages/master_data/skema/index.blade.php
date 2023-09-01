@@ -45,6 +45,7 @@
                         <tr style="background-color: skyblue">
                             <th width='10px'>No</th>
                             <th class="text-center">Nama</th>
+                            <th class="text-center">No. Skema</th>
                             <th width='150px' class="text-center">Action</th>
                         </tr>
                     </thead>
@@ -54,6 +55,7 @@
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $data->nama_skema }}</td>
+                            <td>{{ $data->no }}</td>
                             <td style="text-align: center">
                                 <a href="{{ route('skema.edit', $data->id) }}" class="btn btn-icon btn-warning btn-sm">
                                     <span class="ti ti-edit"></span>

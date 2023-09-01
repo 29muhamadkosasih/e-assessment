@@ -10,5 +10,15 @@
         </span>
         @enderror
     </div>
+    <div class="mb-3">
+        <label class="form-label">No. Skema</label>
+        <input type="text" class="form-control @error('no') is-invalid @enderror" placeholder="Masukan No Skema"
+            name="no" value="{{ old('no') }}" />
+        @error('no')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
     <button type="submit" class="btn btn-primary float-end ms-2">Submit</button>
 </form>

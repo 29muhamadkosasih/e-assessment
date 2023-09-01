@@ -35,7 +35,10 @@ class CreatePersonalDetailTable extends Migration
             $table->string('ijazah');
             $table->string('surat_keterangan_perusahaan');
             $table->string('cv');
-            $table->string('sertifikat_k3');
+            $table->string('sertifikat_pendukung');
+            $table->string('p_cbt');
+            $table->string('ktp');
+            $table->string('ttd');
             $table->unsignedBigInteger('kompetensi_id');
             $table->foreign('kompetensi_id')->references('id')->on('kompetensi')->onDelete('cascade');
             $table->timestamps();

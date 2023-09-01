@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use PDF;
+use TCPDF;
 use App\Models\Bank;
 use App\Models\APL01;
 use App\Models\Kompetensi;
@@ -11,7 +13,6 @@ use App\Models\Personaldetail;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
-use PDF;
 
 class APL01Controller extends Controller
 {
@@ -91,19 +92,67 @@ class APL01Controller extends Controller
             }
         }
 
-        $data5 = $request->sertifikat_k3;
+        $data5 = $request->sertifikat_pendukung;
         if ($data5 == NULL) {
             $filename4 = 0;
         } else {
-            if ($request->hasFile('sertifikat_k3')) {
+            if ($request->hasFile('sertifikat_pendukung')) {
                 $this->validate($request, [
-                    'sertifikat_k3'          => 'mimes:jpeg,png,jpg,gif,pdf|max:15048',
+                    'sertifikat_pendukung'          => 'mimes:jpeg,png,jpg,gif,pdf|max:15048',
                 ]);
-                $file               = $request->file('sertifikat_k3');
+                $file               = $request->file('sertifikat_pendukung');
                 $temp               = str_replace('/', '_', $documentNumber);
-                $filename4          = 'Sertifikat-K3-' . $temp . '.' . $file->getClientOriginalExtension();
-                $destinationPath    = 'storage/Sertifikat-K3';
+                $filename4          = 'Sertifikat-Pendukung-' . $temp . '.' . $file->getClientOriginalExtension();
+                $destinationPath    = 'storage/Sertifikat-Pendukung';
                 $file->move($destinationPath, $filename4);
+            }
+        }
+
+        $data6 = $request->p_cbt;
+        if ($data6 == NULL) {
+            $filename5 = 0;
+        } else {
+            if ($request->hasFile('p_cbt')) {
+                $this->validate($request, [
+                    'p_cbt'          => 'mimes:jpeg,png,jpg,gif,pdf|max:15048',
+                ]);
+                $file               = $request->file('p_cbt');
+                $temp               = str_replace('/', '_', $documentNumber);
+                $filename5          = 'Sertifikat-Pelatihan-CBT-' . $temp . '.' . $file->getClientOriginalExtension();
+                $destinationPath    = 'storage/Pelatihan-CBT';
+                $file->move($destinationPath, $filename5);
+            }
+        }
+
+        $data7 = $request->ktp;
+        if ($data7 == NULL) {
+            $filename6 = 0;
+        } else {
+            if ($request->hasFile('ktp')) {
+                $this->validate($request, [
+                    'ktp'          => 'mimes:jpeg,png,jpg,gif,pdf|max:15048',
+                ]);
+                $file               = $request->file('ktp');
+                $temp               = str_replace('/', '_', $documentNumber);
+                $filename6          = 'KTP-' . $temp . '.' . $file->getClientOriginalExtension();
+                $destinationPath    = 'storage/KTP';
+                $file->move($destinationPath, $filename6);
+            }
+        }
+
+        $data8 = $request->ttd;
+        if ($data8 == NULL) {
+            $filename7 = 0;
+        } else {
+            if ($request->hasFile('ttd')) {
+                $this->validate($request, [
+                    'ttd'          => 'mimes:jpeg,png,jpg,gif,pdf|max:15048',
+                ]);
+                $file               = $request->file('ttd');
+                $temp               = str_replace('/', '_', $documentNumber);
+                $filename7          = 'Tanda-Tangan-' . $temp . '.' . $file->getClientOriginalExtension();
+                $destinationPath    = 'storage/Tanda-Tangan';
+                $file->move($destinationPath, $filename7);
             }
         }
 
@@ -126,7 +175,10 @@ class APL01Controller extends Controller
         $order->ijazah = $filename1;
         $order->surat_keterangan_perusahaan = $filename2;
         $order->cv = $filename3;
-        $order->sertifikat_k3 = $filename4;
+        $order->sertifikat_pendukung = $filename4;
+        $order->p_cbt = $filename5;
+        $order->ktp = $filename6;
+        $order->ttd = $filename7;
         $order->kompetensi_id = $request->kompetensi_id;
         $order->save();
         return redirect()->route('get.apl_01')->with('success', 'Success ! Data Bank Berhasil di Tambahkan');
@@ -182,7 +234,7 @@ class APL01Controller extends Controller
         $pdf->set_paper('letter', 'potrait');
         return $pdf->stream('laporan-request-fund.pdf');
     }
-
+ 
     public function get()
     {
         $userId = auth()->user()->id;
@@ -195,5 +247,14 @@ class APL01Controller extends Controller
         return view('pages.apl_01.get', [
             'datas' => $datas
         ]);
+
+
+        // $pdf = new TCPDF();
+        // $pdf->AddPage();
+        // $pdf->writeHTML(view('pages.apl_01.get', [
+        //     'datas' => $datas
+
+        // ])->render(), true, false, true, false, '');
+        // $pdf->Output('pdf_view.pdf', 'D');
     }
 }

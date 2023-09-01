@@ -34,8 +34,103 @@
                             <td class="text-center">{{$loop->iteration}}</td>
                             <td>{{$data->skema->nama_skema}}</td>
                             <td>{{$data->no_skkni}}</td>
-                            <td>{{$data->kode}}</td>
-                            <td>{{$data->unit_kompetensi}}</td>
+                            <td>
+                                {{$data->kode}} <br>
+
+                                @unless(!$data->kode2)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode2 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode3)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode3 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode4)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode4 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode5)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode5 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode6)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode6 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode7)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode7 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode8)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode8 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode9)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode9 }} <br>
+                                @endunless
+
+                                @unless(!$data->kode10)
+                                <!-- Tampilkan data -->
+                                {{ $data->kode10 }} <br>
+                                @endunless
+
+                            </td>
+                            <td>{{$data->unit_kompetensi}} <br>
+
+                                @unless(!$data->unit_kompetensi2)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi2 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi3)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi3 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi4)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi4 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi5)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi5 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi6)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi6 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi7)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi7 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi8)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi8 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi9)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi9 }} <br>
+                                @endunless
+
+                                @unless(!$data->unit_kompetensi10)
+                                <!-- Tampilkan data -->
+                                {{ $data->unit_kompetensi10 }} <br>
+                                @endunless
+
+                            </td>
                             <td class="text-center">
                                 <a href="{{ route('kompetensi.show', $data->id) }}"
                                     class="btn btn-icon btn-success btn-sm">

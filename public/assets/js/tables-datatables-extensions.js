@@ -26,7 +26,6 @@ $(function () {
         { data: 'age' },
         { data: 'experience' },
         { data: '' },
-        { data: '' }
       ],
       columnDefs: [
         {

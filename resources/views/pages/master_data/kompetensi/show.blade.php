@@ -15,6 +15,7 @@
             </div>
             <div class="table-responsive">
                 <table class="table table-bordered table-hover">
+                    {{-- dt-scrollableTable --}}
                     <thead>
                         <tr style="background-color: skyblue">
                             <th width="150px" class="text-center">Nama Skema</th>
@@ -33,8 +34,9 @@
                             <td>{!! $show->kuk !!}</td>
                         </tr>
                         @switch($show)
-                        @case($show->kode == NULL)
+                        @case($show->kode2 == NULL)
                         @break
+                        @default
                         <tr>
                             <td></td>
                             <td></td>
@@ -42,8 +44,110 @@
                             <td>{!! $show->element_kompetensi2 !!}</td>
                             <td>{!! $show->kuk2 !!}</td>
                         </tr>
-                        @default
+                        @endswitch
 
+                        @switch($show)
+                        @case($show->kode3 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode3}}- {{$show->unit_kompetensi3}}</td>
+                            <td>{!! $show->element_kompetensi3 !!}</td>
+                            <td>{!! $show->kuk3 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode4 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode4}}- {{$show->unit_kompetensi4}}</td>
+                            <td>{!! $show->element_kompetensi4 !!}</td>
+                            <td>{!! $show->kuk4 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode5 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode5}}- {{$show->unit_kompetensi5}}</td>
+                            <td>{!! $show->element_kompetensi5 !!}</td>
+                            <td>{!! $show->kuk5 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode6 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode6}}- {{$show->unit_kompetensi6}}</td>
+                            <td>{!! $show->element_kompetensi6 !!}</td>
+                            <td>{!! $show->kuk6 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode7 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode7}}- {{$show->unit_kompetensi7}}</td>
+                            <td>{!! $show->element_kompetensi7 !!}</td>
+                            <td>{!! $show->kuk7 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode8 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode8}}- {{$show->unit_kompetensi8}}</td>
+                            <td>{!! $show->element_kompetensi8 !!}</td>
+                            <td>{!! $show->kuk8 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode9 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode9}}- {{$show->unit_kompetensi9}}</td>
+                            <td>{!! $show->element_kompetensi9 !!}</td>
+                            <td>{!! $show->kuk9 !!}</td>
+                        </tr>
+                        @endswitch
+
+                        @switch($show)
+                        @case($show->kode10 == NULL)
+                        @break
+                        @default
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td>{{$show->kode10}}- {{$show->unit_kompetensi10}}</td>
+                            <td>{!! $show->element_kompetensi10 !!}</td>
+                            <td>{!! $show->kuk10 !!}</td>
+                        </tr>
                         @endswitch
 
                     </tbody>

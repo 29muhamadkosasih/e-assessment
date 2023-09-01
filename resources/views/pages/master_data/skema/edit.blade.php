@@ -11,6 +11,17 @@
         </span>
         @enderror
     </div>
+
+    <div class="mb-3">
+        <label class="form-label">No. Skema</label>
+        <input type="text" class="form-control @error('no') is-invalid @enderror" placeholder="Masukkan No. Skema"
+            name="no" value="{{ $edit->no }}" />
+        @error('no')
+        <span class="invalid-feedback" role="alert">
+            <strong>{{ $message }}</strong>
+        </span>
+        @enderror
+    </div>
     <button type="submit" class="btn btn-primary float-end ms-2">Submit</button>
     <a href="{{ route('skema.index') }}" class="btn btn-secondary float-end ">Back</a>
 </form>

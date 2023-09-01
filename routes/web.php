@@ -6,6 +6,7 @@ use App\Http\Controllers\BankController;
 use App\Http\Controllers\APL01Controller;
 use App\Http\Controllers\SkemaController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\ValidasiController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\StaterkitController;
 use App\Http\Controllers\Admin\RoleController;
@@ -43,4 +44,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('apl_01', APL01Controller::class);
     Route::resource('skema', SkemaController::class);
     Route::resource('kompetensi', KompetensiController::class);
+    Route::resource('validasi', ValidasiController::class);
 });
